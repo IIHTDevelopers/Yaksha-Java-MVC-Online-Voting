@@ -73,7 +73,7 @@ public class VoterDAOTest {
     }
 
     @Test
-    public void testDeleteVoter() throws Exception {
+    public void testDeleteVoterDAO() throws Exception {
         Voter actual = getVoter();
         boolean value = voterDAO.delete(actual.getVoterId().intValue());
         yakshaAssert(currentTest(), value ? true : false, businessTestFile);
