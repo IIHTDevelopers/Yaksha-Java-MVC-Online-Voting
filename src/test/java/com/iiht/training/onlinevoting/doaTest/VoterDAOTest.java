@@ -61,7 +61,7 @@ public class VoterDAOTest {
     }
 
     @Test
-    public void testGetPollById() throws Exception {
+    public void testGetPollByIdForVoter() throws Exception {
         Voter actual = getVoter();
         when(voterRepository.findById(actual.getVoterId())).thenReturn(Optional.of(actual));
         Voter expected = (Voter) voterDAO.get(actual.getVoterId().intValue());
