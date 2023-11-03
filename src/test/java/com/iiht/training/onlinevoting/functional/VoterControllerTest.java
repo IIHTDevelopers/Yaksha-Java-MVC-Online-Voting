@@ -146,7 +146,7 @@ public class VoterControllerTest {
     }
 
     @Test
-    public void testDeleteVoter() throws Exception {
+    public void testDeleteVoterController() throws Exception {
         when(authentication.authenticate(any(HttpServletRequest.class))).thenReturn("admin");
         MvcResult result = this.mockMvc.perform(post("/voter/deleteVoter/" + 1L)).andReturn();
         yakshaAssert(currentTest(), result.getModelAndView().getViewName().contentEquals("redirect:/voter/displayAll") ? true : false, businessTestFile);
